@@ -4,7 +4,6 @@ function Home() {
     useEffect(() => {
 
     const $history = document.getElementById('history');
-    const $refreshButton = $history.querySelector(':scope > button[name="refresh"]');
     const $list = $history.querySelector(':scope > .list');
     const $messageForm = document.getElementById('messageForm');
 
