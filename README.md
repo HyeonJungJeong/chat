@@ -11,7 +11,7 @@ AI와 실시간으로 대화하며, 대화 내용을 MariaDB에 저장하는 Nod
 # Express 백엔드 서버 ├── .env                     
 # 환경 변수 설정 ├── service-account.json     
 # Google Cloud 서비스 계정 키 ├── package.json             
-# Node.js 의존성 ├── client/ │   ├── src/ │   │   ├── HomeStreaming.jsx 
+# Node.js 의존성 ├── client/ │   ├── src/ │   │   ├── Home.jsx 
 # React 프론트엔드 컴포넌트 │   │   ├── App.css 
 # 커서 애니메이션 CSS │   │   └── index.js │   └── public/ └── README.md
 
@@ -43,12 +43,10 @@ AI와 실시간으로 대화하며, 대화 내용을 MariaDB에 저장하는 Nod
 - `saveMessage(sender, message)`: MariaDB에 메시지 저장
 - `GoogleAuth`: OAuth 인증 및 토큰 발급
 
-### 2. 프론트엔드 (`HomeStreaming.jsx`)
+### 2. 프론트엔드 (`Home.jsx`)
 - 닉네임과 메시지 입력
-- `EventSource`로 Gemini 응답을 실시간 수신
-- `streamText()` 함수로 단어 단위 출력
-- 출력 중에는 `typing-cursor` CSS로 깜빡이는 커서 표시
-
+- data에 대답 json 수신
+- setChat(prev => [...prev, aiMessage])
 ---
 
 ## 설치 및 실행
@@ -96,7 +94,7 @@ Google Auth Library
 
 MariaDB Docs
 
-## 보완사항
+## 추가 보완사항
 스트리밍 방식의 채팅 방식에서 AI 답변이 무작위로 나오는 점.
 스트리밍 방식의 채팅에서 AI 답변이 DB에 저장이 안되는 점. 
 
@@ -106,6 +104,6 @@ MariaDB Docs
 
 AI (Gemini 응답)
 
-## 추가 사항
+## 추가 전달 사항
 
 App.jsx에서 Home -> HomeStreaming으로 바꾸면 스트리밍 방식의 데모를 볼수 있음.
