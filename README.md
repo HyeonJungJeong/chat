@@ -105,3 +105,7 @@ MariaDB Docs
 정현중
 
 AI (Gemini 응답)
+
+## 추가 사항
+
+App.jsx에서 Home -> HomeStreaming으로 바꾸면 스트리밍 방식의 데모를 볼수 있음.
